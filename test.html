@@ -1,0 +1,119 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+    <script src="test.js"></script>
+</head>
+
+<body>
+
+
+    <main id="app">
+
+        <div class="product">
+
+            <figure class="photo">
+                <img src="images/1.png" alt="">
+
+            </figure>
+            <div class="title">
+                <h2>
+
+                    <!-- <div><span style="color: white;">MANAGE YOUR</span></div>
+                    <div><span style="color: white;">GARDEN WITH</span></div>
+                    <div><span style="color: white;">ONE TAP</span></div> -->
+                   
+                </h2>
+            </div>
+        </div>
+
+        <div class="product">
+            <figure class="photo">
+                <img src="images/2.png" alt="">
+            </figure>
+            <div class="title">
+                <h2>
+                    <!-- <div><span>MANAGE YOUR</span></div>
+                    <div><span>GARDEN WITH</span></div>
+                    <div><span>ONE TAP</span></div> -->
+                </h2>
+            </div>
+        </div>
+
+        <div class="product">
+            <figure class="photo">
+                <img src="images/3.png" alt="">
+            </figure>
+            <div class="title">
+                <h2>
+                    <!-- <div><span>I HAVE</span></div>
+                    <div><span>THIS IKEA</span></div>
+                    <div><span>CHAIR</span></div> -->
+                </h2>
+            </div>
+        </div>
+
+        <div class="product lastp">
+            <figure class="photo lastp">
+                <img src="images/4.png" alt="">
+            </figure>
+            <div class="title">
+                <h2>
+                    <!-- <div><span>CLOSE-UP</span></div>
+                    <div><span>OF A</span></div>
+                    <div><span>CHAIR</span></div> -->
+                </h2>
+            </div>
+        </div>
+
+        <div class="mouse-tracker">
+        </div>
+
+    </main>
+</body>
+
+<script>
+    console.clear();
+
+    const elApp = document.querySelector("#app");
+    const elProducts = document.querySelectorAll(".product");
+
+    let product = 0;
+    elProducts[product].dataset.active = true;
+    elApp.dataset.product = product + 1;
+    elApp.dataset.productCount = elProducts.length;
+
+    app.addEventListener("click", () => {
+        delete elProducts[product].dataset.active;
+        product = (product + 1) % elProducts.length;
+        elApp.dataset.product = product + 1;
+        elProducts[product].dataset.active = true;
+        // if (elApp.dataset.product == 4) {
+        //     window.location.href = "index.html";
+        //     //console.log("yes");
+        // }
+        // console.log(elApp.dataset.product);
+
+    });
+    // document.getElementsByClassName('lastp').onclick = function () {
+    //     prompt('Hello world');
+    // };
+
+
+    /* ---------------------------------- */
+
+    document.addEventListener("mousemove", e => {
+        document.documentElement.style.setProperty("--mouse-x", e.clientX + 'px');
+        document.documentElement.style.setProperty("--mouse-y", e.clientY + 'px');
+    });
+
+
+
+
+</script>
+
+</html>
